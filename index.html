@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你的名字 - 數位名片</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.5s ease;
+        }
+        .link-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .profile-section {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex items-center justify-center p-4">
+
+    <main class="w-full max-w-sm mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+        
+        <!-- 頭像與個人資訊區塊 -->
+        <section class="profile-section flex flex-col items-center mb-6">
+            <img src="https://placehold.co/128x128/e0e0e0/000000?text=Your+Photo" 
+                 alt="你的個人照片" 
+                 class="w-32 h-32 rounded-full border-4 border-white dark:border-gray-700 shadow-md mb-4 animate-pulse-once">
+            <h1 class="text-3xl font-bold mb-1">你的名字</h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400">高中生 / 你的標語</p>
+        </section>
+
+        <!-- Linktree 風格按鈕區塊 -->
+        <section class="w-full">
+            <!-- GitHub 按鈕 -->
+            <a href="https://github.com/你的用戶名" 
+               target="_blank" 
+               class="link-button flex items-center justify-center w-full px-6 py-4 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 mb-4 duration-300"
+               style="animation-delay: 0.5s;">
+                <i class="fab fa-github text-xl mr-3"></i>
+                <span>GitHub</span>
+            </a>
+
+            <!-- Email 按鈕 -->
+            <a href="mailto:你的email@example.com" 
+               class="link-button flex items-center justify-center w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 mb-4 duration-300"
+               style="animation-delay: 0.6s;">
+                <i class="fas fa-envelope text-xl mr-3"></i>
+                <span>Email</span>
+            </a>
+
+            <!-- LinkedIn 按鈕 -->
+            <a href="https://www.linkedin.com/in/你的用戶名" 
+               target="_blank" 
+               class="link-button flex items-center justify-center w-full px-6 py-4 bg-blue-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 mb-4 duration-300"
+               style="animation-delay: 0.7s;">
+                <i class="fab fa-linkedin text-xl mr-3"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <!-- Instagram 按鈕 -->
+            <a href="https://www.instagram.com/你的用戶名" 
+               target="_blank" 
+               class="link-button flex items-center justify-center w-full px-6 py-4 bg-pink-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 mb-4 duration-300"
+               style="animation-delay: 0.8s;">
+                <i class="fab fa-instagram text-xl mr-3"></i>
+                <span>Instagram</span>
+            </a>
+        </section>
+        
+        <!-- 頁腳 -->
+        <footer class="mt-6 text-xs text-gray-400 dark:text-gray-500 text-center">
+            &copy; 2024 你的名字. All Rights Reserved.
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>
